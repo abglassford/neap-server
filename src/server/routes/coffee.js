@@ -27,20 +27,12 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  const coffee = {
-    name: 'asd;lfj',
-    roaster: 'j;llkj',
-    origin: ';ljlkj',
-    roast: 'j;ljl;j',
-    caffeine: 12,
-    decaf: 'true',
-    price: 12,
-    quantity: 12
-  }
   return knex('coffee').insert(req.body)
   .then((doc) => {
-    console.log('doc', doc);
-    console.log(req.body);
+    res.status(200).json({
+      data: doc,
+      status: 'success'
+    })
   })
   .catch((err) => {
     console.log(err);
