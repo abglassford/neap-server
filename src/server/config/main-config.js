@@ -8,6 +8,7 @@
   const bodyParser = require('body-parser');
   const flash = require('connect-flash');
   const morgan = require('morgan');
+  const faker = require('faker');
 
   // *** load environment variables *** //
   require('dotenv').config();
