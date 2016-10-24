@@ -22,7 +22,7 @@ const paths = {
   server: path.join('src', 'server', 'server.js')
 };
 
-const lrPort = 35729;
+const lrPort = 35728;
 
 const nodemonConfig = {
   script: paths.server,
@@ -37,8 +37,8 @@ const nodemonConfig = {
 
 gulp.task('default', () => {
   runSequence(
-    ['jshint'],
-    ['jscs'],
+    // ['jshint'],
+    // ['jscs'],
     ['lr'],
     ['nodemon'],
     ['watch']

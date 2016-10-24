@@ -26,4 +26,26 @@ router.get('/:id', (req, res, next) => {
   .catch((err) => { return next(err); });
 });
 
+router.post('/', (req, res, next) => {
+  const coffee = {
+    name: 'asd;lfj',
+    roaster: 'j;llkj',
+    origin: ';ljlkj',
+    roast: 'j;ljl;j',
+    caffeine: 12,
+    decaf: 'true',
+    price: 12,
+    quantity: 12
+  }
+  return knex('coffee').insert(req.body)
+  .then((doc) => {
+    console.log('doc', doc);
+    console.log(req.body);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+
+});
+
 module.exports = router;
